@@ -8,8 +8,12 @@
 
 import UIKit
 
-class CurrenciesCollectionViewCell: UICollectionViewCell {
+class CurrencyCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var ISOCode: UILabel!
+    @IBOutlet weak var Currency: UILabel!
+    @IBOutlet weak var Flag: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
