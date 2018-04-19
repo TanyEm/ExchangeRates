@@ -18,6 +18,7 @@
 		73B00C672084CEF900DBABCE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B00C652084CEF900DBABCE /* Alamofire.framework */; };
 		73D8690920866196002157A8 /* CurrenciesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8690820866196002157A8 /* CurrenciesData.swift */; };
 		73D8690B20878FC8002157A8 /* ExchangeRatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8690A20878FC8002157A8 /* ExchangeRatesViewController.swift */; };
+		73D8697C208947EC002157A8 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8697B208947EB002157A8 /* ApiClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		73B00C652084CEF900DBABCE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		73D8690820866196002157A8 /* CurrenciesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesData.swift; sourceTree = "<group>"; };
 		73D8690A20878FC8002157A8 /* ExchangeRatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewController.swift; sourceTree = "<group>"; };
+		73D8697B208947EB002157A8 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		738CC8112082648600159E44 /* ExchangeRates */ = {
 			isa = PBXGroup;
 			children = (
+				73D8697A208947C1002157A8 /* Network */,
 				738CC8122082648600159E44 /* AppDelegate.swift */,
 				73D8690720866149002157A8 /* Data */,
 				73D8690C208795E7002157A8 /* Controllers */,
@@ -114,6 +117,14 @@
 				738CC8252082669C00159E44 /* CurrencyCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		73D8697A208947C1002157A8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				73D8697B208947EB002157A8 /* ApiClient.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D8697C208947EC002157A8 /* ApiClient.swift in Sources */,
 				738CC8132082648600159E44 /* AppDelegate.swift in Sources */,
 				73D8690B20878FC8002157A8 /* ExchangeRatesViewController.swift in Sources */,
 				738CC8262082669C00159E44 /* CurrencyCell.swift in Sources */,

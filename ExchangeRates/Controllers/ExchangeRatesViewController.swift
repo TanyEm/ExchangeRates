@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Alamofire
 
 class ExchangeRatesViewController: UIViewController {
 
+    private var currenciesArray = [CurrencyData]()
+    private let cellID = "CurrencyCell"
 
-    let dataArray = ["AUD", "AZN", "GBP", "AMD", "BYN", "BGN", "USD", "EUR", "RUB"]
     var estimateWith = 160.0
     var cellMarginSize = 16.00
 
@@ -38,8 +40,8 @@ class ExchangeRatesViewController: UIViewController {
         super.viewDidLoad()
 
         // Register cells
-        exchangeRatesCollectionView.register(UINib(nibName: "CurrencyCell", bundle: nil),
-                                             forCellWithReuseIdentifier: "CurrencyCell")
+        exchangeRatesCollectionView.register(UINib(nibName: cellID, bundle: nil),
+                                             forCellWithReuseIdentifier: cellID)
 
         // Set Delegates
         self.exchangeRatesCollectionView.delegate = self
@@ -47,6 +49,17 @@ class ExchangeRatesViewController: UIViewController {
 
         // Setup grid view
         self.setupGridWiew()
+
+        // Do any additional setup after loading the view.
+
+        let apiClient = ApiClient()
+        apiClient.obtainCurrencies(closure: { (currenciesArray) -> Void in
+            self.currenciesArray = currenciesArray
+            DispatchQueue.main.async { [weak self] in
+                self?.exchangeRatesCollectionView.reloadData()
+            }
+        })
+
     }
 
     func setupGridWiew() {
@@ -54,28 +67,24 @@ class ExchangeRatesViewController: UIViewController {
         flow.minimumInteritemSpacing = CGFloat(self.cellMarginSize)
         flow.minimumLineSpacing = CGFloat(self.cellMarginSize)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ExchangeRatesViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.dataArray.count
+        return currenciesArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = exchangeRatesCollectionView.dequeueReusableCell(withReuseIdentifier: "CurrencyCell", for: indexPath) as! CurrencyCell
-        cell.setData(code: self.dataArray[indexPath.row])
+        let cell = exchangeRatesCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CurrencyCell
+        cell.setData(code: currenciesArray[indexPath.row].CharCode!, currency: currenciesArray[indexPath.row].Value!)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "About")
+        self.navigationController?.show(vc, sender: Any?.self)
+        self.exchangeRatesCollectionView.deselectItem(at: indexPath, animated: true)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

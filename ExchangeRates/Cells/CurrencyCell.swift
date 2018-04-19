@@ -19,8 +19,9 @@ class CurrencyCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func setData(code:String){
+    func setData(code:String, currency: Double){
         self.ISOCode.text = code
+        self.Currency.text = String(currency)
     }
 
 }
