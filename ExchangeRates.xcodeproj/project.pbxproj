@@ -11,13 +11,13 @@
 		738CC8182082648600159E44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 738CC8162082648600159E44 /* Main.storyboard */; };
 		738CC81A2082649300159E44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 738CC8192082649300159E44 /* Assets.xcassets */; };
 		738CC81D2082649300159E44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 738CC81B2082649300159E44 /* LaunchScreen.storyboard */; };
-		738CC8262082669C00159E44 /* CurrencyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC8242082669C00159E44 /* CurrencyCollectionViewCell.swift */; };
-		738CC8272082669C00159E44 /* CurrencyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738CC8252082669C00159E44 /* CurrencyCollectionViewCell.xib */; };
-		738CC82920826B4500159E44 /* ExchangeRatesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC82820826B4500159E44 /* ExchangeRatesCollectionViewController.swift */; };
+		738CC8262082669C00159E44 /* CurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC8242082669C00159E44 /* CurrencyCell.swift */; };
+		738CC8272082669C00159E44 /* CurrencyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738CC8252082669C00159E44 /* CurrencyCell.xib */; };
 		738CC82B20826B9D00159E44 /* AboutCurrencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738CC82A20826B9D00159E44 /* AboutCurrencyTableViewController.swift */; };
 		73B00C662084CEF900DBABCE /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B00C642084CEF900DBABCE /* SDWebImage.framework */; };
 		73B00C672084CEF900DBABCE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B00C652084CEF900DBABCE /* Alamofire.framework */; };
 		73D8690920866196002157A8 /* CurrenciesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8690820866196002157A8 /* CurrenciesData.swift */; };
+		73D8690B20878FC8002157A8 /* ExchangeRatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D8690A20878FC8002157A8 /* ExchangeRatesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,13 +27,13 @@
 		738CC8192082649300159E44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		738CC81C2082649300159E44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		738CC81E2082649300159E44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		738CC8242082669C00159E44 /* CurrencyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCollectionViewCell.swift; sourceTree = "<group>"; };
-		738CC8252082669C00159E44 /* CurrencyCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCollectionViewCell.xib; sourceTree = "<group>"; };
-		738CC82820826B4500159E44 /* ExchangeRatesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesCollectionViewController.swift; sourceTree = "<group>"; };
+		738CC8242082669C00159E44 /* CurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyCell.swift; sourceTree = "<group>"; };
+		738CC8252082669C00159E44 /* CurrencyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyCell.xib; sourceTree = "<group>"; };
 		738CC82A20826B9D00159E44 /* AboutCurrencyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCurrencyTableViewController.swift; sourceTree = "<group>"; };
 		73B00C642084CEF900DBABCE /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		73B00C652084CEF900DBABCE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		73D8690820866196002157A8 /* CurrenciesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesData.swift; sourceTree = "<group>"; };
+		73D8690A20878FC8002157A8 /* ExchangeRatesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,11 +70,9 @@
 			isa = PBXGroup;
 			children = (
 				738CC8122082648600159E44 /* AppDelegate.swift */,
-				738CC82A20826B9D00159E44 /* AboutCurrencyTableViewController.swift */,
 				73D8690720866149002157A8 /* Data */,
-				738CC82820826B4500159E44 /* ExchangeRatesCollectionViewController.swift */,
-				738CC8242082669C00159E44 /* CurrencyCollectionViewCell.swift */,
-				738CC8252082669C00159E44 /* CurrencyCollectionViewCell.xib */,
+				73D8690C208795E7002157A8 /* Controllers */,
+				73D8690D208795FE002157A8 /* Cells */,
 				738CC8162082648600159E44 /* Main.storyboard */,
 				738CC8192082649300159E44 /* Assets.xcassets */,
 				738CC81B2082649300159E44 /* LaunchScreen.storyboard */,
@@ -98,6 +96,24 @@
 				73D8690820866196002157A8 /* CurrenciesData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		73D8690C208795E7002157A8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				738CC82A20826B9D00159E44 /* AboutCurrencyTableViewController.swift */,
+				73D8690A20878FC8002157A8 /* ExchangeRatesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		73D8690D208795FE002157A8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				738CC8242082669C00159E44 /* CurrencyCell.swift */,
+				738CC8252082669C00159E44 /* CurrencyCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,7 +177,7 @@
 			files = (
 				738CC81D2082649300159E44 /* LaunchScreen.storyboard in Resources */,
 				738CC81A2082649300159E44 /* Assets.xcassets in Resources */,
-				738CC8272082669C00159E44 /* CurrencyCollectionViewCell.xib in Resources */,
+				738CC8272082669C00159E44 /* CurrencyCell.xib in Resources */,
 				738CC8182082648600159E44 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,10 +208,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				738CC8132082648600159E44 /* AppDelegate.swift in Sources */,
-				738CC8262082669C00159E44 /* CurrencyCollectionViewCell.swift in Sources */,
+				73D8690B20878FC8002157A8 /* ExchangeRatesViewController.swift in Sources */,
+				738CC8262082669C00159E44 /* CurrencyCell.swift in Sources */,
 				738CC82B20826B9D00159E44 /* AboutCurrencyTableViewController.swift in Sources */,
 				73D8690920866196002157A8 /* CurrenciesData.swift in Sources */,
-				738CC82920826B4500159E44 /* ExchangeRatesCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
