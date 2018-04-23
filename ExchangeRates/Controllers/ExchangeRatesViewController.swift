@@ -8,11 +8,13 @@
 
 import UIKit
 import Alamofire
+import SDWebImage
 
 class ExchangeRatesViewController: UIViewController {
 
     private var currenciesArray = [CurrencyData]()
     private let cellID = "CurrencyCell"
+    private let imageURL = "https://raw.githubusercontent.com/transferwise/currency-flags/master/src/flags"
 
     var estimateWith = 160.0
     var cellMarginSize = 16.00
@@ -77,14 +79,25 @@ extension ExchangeRatesViewController: UICollectionViewDataSource, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = exchangeRatesCollectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CurrencyCell
         cell.setData(code: currenciesArray[indexPath.row].CharCode!, currency: currenciesArray[indexPath.row].Value!)
+
+        DispatchQueue.global(qos: .background).async {
+            let imageName = "\(self.currenciesArray[indexPath.row].CharCode!.lowercased()).png"
+            let baseURL = URL(string: "\(self.imageURL)")
+            let url = baseURL?.appendingPathComponent(imageName)
+            if url != nil{
+                cell.Flag.sd_setImage(with: url)
+            }
+        }
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "About")
-        self.navigationController?.show(vc, sender: Any?.self)
+        let aboutCurrencyTableViewController = storyboard.instantiateViewController(withIdentifier: "About")
+
+        self.navigationController?.show(aboutCurrencyTableViewController, sender: Any?.self)
         self.exchangeRatesCollectionView.deselectItem(at: indexPath, animated: true)
+
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

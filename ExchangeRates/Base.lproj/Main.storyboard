@@ -96,7 +96,6 @@
                     <navigationItem key="navigationItem" title="Exchange Rates" id="608-x1-gDb"/>
                     <connections>
                         <outlet property="exchangeRatesCollectionView" destination="HGf-8X-kS7" id="XRe-VN-LEC"/>
-                        <segue destination="FIi-vv-cBW" kind="show" identifier="AboutCurrency" id="qE9-Xy-Y1t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGO-B9-som" userLabel="First Responder" sceneMemberID="firstResponder"/>

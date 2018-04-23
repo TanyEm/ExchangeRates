@@ -11,6 +11,7 @@ import UIKit
 class AboutCurrencyTableViewController: UITableViewController {
 
     var ISOcode = ""
+    var heder = ""
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -45,9 +46,7 @@ class AboutCurrencyTableViewController: UITableViewController {
         return 0
     }
 
-//    func commonInit(title: String) -> <#return type#> {
-//        self.title = title
-//    }
+
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

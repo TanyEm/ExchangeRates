@@ -19,35 +19,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="141" height="161"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBK-41-FGA">
-                        <rect key="frame" x="8" y="0.0" width="125" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dF8-CZ-Sf8">
-                        <rect key="frame" x="8" y="29" width="125" height="24"/>
+                        <rect key="frame" x="8" y="48" width="125" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" red="0.2648192254755094" green="0.26946876697257427" blue="0.29113417088223348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="czg-7f-kb5">
-                        <rect key="frame" x="8" y="61" width="125" height="92"/>
+                        <rect key="frame" x="23" y="84" width="95" height="64"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBK-41-FGA">
+                        <rect key="frame" x="8" y="12" width="125" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" red="0.74220978410868099" green="1" blue="0.74214306058250035" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="uBK-41-FGA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="4Hc-jA-NO1"/>
+                <constraint firstItem="uBK-41-FGA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="4Hc-jA-NO1"/>
                 <constraint firstAttribute="trailing" secondItem="dF8-CZ-Sf8" secondAttribute="trailing" constant="8" id="DvP-vV-QmR"/>
-                <constraint firstAttribute="bottom" secondItem="czg-7f-kb5" secondAttribute="bottom" constant="8" id="Nbv-xD-AAB"/>
+                <constraint firstAttribute="bottom" secondItem="czg-7f-kb5" secondAttribute="bottom" constant="13" id="MvG-qY-ROY"/>
                 <constraint firstAttribute="trailing" secondItem="uBK-41-FGA" secondAttribute="trailing" constant="8" id="Qbz-Hg-9Kd"/>
+                <constraint firstItem="czg-7f-kb5" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="T5v-OQ-aoP"/>
                 <constraint firstItem="dF8-CZ-Sf8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="Z6A-yC-nv4"/>
+                <constraint firstItem="czg-7f-kb5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="23" id="dS0-Gp-NMZ"/>
                 <constraint firstItem="uBK-41-FGA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="e1l-oe-wFB"/>
-                <constraint firstItem="dF8-CZ-Sf8" firstAttribute="top" secondItem="uBK-41-FGA" secondAttribute="bottom" constant="8" id="gdW-SY-F3u"/>
-                <constraint firstAttribute="trailing" secondItem="czg-7f-kb5" secondAttribute="trailing" constant="8" id="iec-Ym-6rW"/>
-                <constraint firstItem="czg-7f-kb5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="jez-GT-ChP"/>
-                <constraint firstItem="czg-7f-kb5" firstAttribute="top" secondItem="dF8-CZ-Sf8" secondAttribute="bottom" constant="8" id="sEz-5q-C23"/>
+                <constraint firstItem="dF8-CZ-Sf8" firstAttribute="top" secondItem="uBK-41-FGA" secondAttribute="bottom" constant="12" id="gdW-SY-F3u"/>
+                <constraint firstItem="czg-7f-kb5" firstAttribute="top" secondItem="dF8-CZ-Sf8" secondAttribute="bottom" constant="12" id="sEz-5q-C23"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="141" height="161"/>
@@ -56,7 +56,7 @@
                 <outlet property="Flag" destination="czg-7f-kb5" id="urS-IN-hJ8"/>
                 <outlet property="ISOCode" destination="uBK-41-FGA" id="eR6-e3-vCK"/>
             </connections>
-            <point key="canvasLocation" x="-118" y="75"/>
+            <point key="canvasLocation" x="-118.5" y="74.5"/>
         </collectionViewCell>
     </objects>
 </document>
