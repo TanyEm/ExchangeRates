@@ -85,6 +85,8 @@ extension ExchangeRatesViewController: UICollectionViewDataSource, UICollectionV
             let baseURL = URL(string: "\(self.imageURL)")
             let url = baseURL?.appendingPathComponent(imageName)
             if url != nil{
+                cell.Flag.sd_setShowActivityIndicatorView(true)
+                cell.Flag.sd_setIndicatorStyle(.gray)
                 cell.Flag.sd_setImage(with: url)
             }
         }
