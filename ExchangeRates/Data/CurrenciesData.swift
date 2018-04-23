@@ -20,8 +20,18 @@ struct CurrenciesData: Decodable {
 struct CurrencyData: Decodable {
     var Value: Double?
     var CharCode: String?
+    var ID: String?
+    var NumCode: String?
+    var Nominal: Int?
+    var Name: String?
+    var Previous: Double?
     init() {
         Value = 0.0
         CharCode = ""
+        ID = ""
+        NumCode = ""
+        Nominal = 0
+        Name = ""
+        Previous = 0.0
     }
 }

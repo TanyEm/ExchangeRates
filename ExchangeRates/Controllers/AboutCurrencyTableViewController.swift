@@ -10,8 +10,15 @@ import UIKit
 
 class AboutCurrencyTableViewController: UITableViewController {
 
-    var ISOcode = ""
-    var heder = ""
+    private var currenciesArray = [CurrencyData]()
+    var currencyIndex = 0
+
+    @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var numCodeLabel: UILabel!
+    @IBOutlet weak var nominalLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var previousLabel: UILabel!
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -32,30 +39,22 @@ class AboutCurrencyTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ApiClient.obtainCurrencies(closure: { (currenciesArray) -> Void in
+            self.currenciesArray = currenciesArray
+            DispatchQueue.main.async { [weak self] in
+
+                self?.valueLabel.text = String(format: "%.3f",(self?.currenciesArray[(self?.currencyIndex)!].Value)!)
+                self?.idLabel.text = self?.currenciesArray[(self?.currencyIndex)!].ID
+                self?.nameLabel.text = self?.currenciesArray[(self?.currencyIndex)!].Name
+                self?.nominalLabel.text = String(format: "%d",(self?.currenciesArray[(self?.currencyIndex)!].Nominal)!)
+                self?.numCodeLabel.text = self?.currenciesArray[(self?.currencyIndex)!].NumCode
+                self?.previousLabel.text = String(format: "%.3f",(self?.currenciesArray[(self?.currencyIndex)!].Previous)!)
+
+
+                self?.tableView.reloadData()
+            }
+        })
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
+    
 }

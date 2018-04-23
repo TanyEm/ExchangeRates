@@ -11,25 +11,30 @@ import Alamofire
 
 class ApiClient{
 
-    private let requestUrl = "https://www.cbr-xml-daily.ru/daily_json.js"
+    static private let requestUrl = "https://www.cbr-xml-daily.ru/daily_json.js"
+    static private var currenciesArray = [CurrencyData]()
 
-    func obtainCurrencies(closure: @escaping ([CurrencyData]) -> Void) {
-        guard let apiURL = URL(string: requestUrl) else {
-            return
-        }
+    static func obtainCurrencies(closure: @escaping ([CurrencyData]) -> Void) {
 
-        Alamofire.request(apiURL).responseJSON { (response) in
-
-            var currenciesData = CurrenciesData()
-            do{
-                currenciesData = try JSONDecoder().decode(CurrenciesData.self, from: response.data!)
-                closure(Array(currenciesData.Valute.values))
-
-            } catch {
-                print(error.localizedDescription)
+        if currenciesArray.isEmpty{
+            guard let apiURL = URL(string: requestUrl) else {
+                return
             }
+
+            Alamofire.request(apiURL).responseJSON { (response) in
+
+                var currenciesData = CurrenciesData()
+                do{
+                    currenciesData = try JSONDecoder().decode(CurrenciesData.self, from: response.data!)
+                    currenciesArray = Array(currenciesData.Valute.values)
+                    closure(currenciesArray)
+
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        } else {
+            closure(currenciesArray)
         }
     }
-
-    
 }

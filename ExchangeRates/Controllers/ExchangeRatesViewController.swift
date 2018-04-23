@@ -54,8 +54,7 @@ class ExchangeRatesViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 
-        let apiClient = ApiClient()
-        apiClient.obtainCurrencies(closure: { (currenciesArray) -> Void in
+        ApiClient.obtainCurrencies(closure: { (currenciesArray) -> Void in
             self.currenciesArray = currenciesArray
             DispatchQueue.main.async { [weak self] in
                 self?.exchangeRatesCollectionView.reloadData()
@@ -95,7 +94,9 @@ extension ExchangeRatesViewController: UICollectionViewDataSource, UICollectionV
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let aboutCurrencyTableViewController = storyboard.instantiateViewController(withIdentifier: "About")
+        let aboutCurrencyTableViewController = storyboard.instantiateViewController(withIdentifier: "About") as! AboutCurrencyTableViewController
+        aboutCurrencyTableViewController.title = currenciesArray[indexPath.row].CharCode!
+        aboutCurrencyTableViewController.currencyIndex = indexPath.row
 
         self.navigationController?.show(aboutCurrencyTableViewController, sender: Any?.self)
         self.exchangeRatesCollectionView.deselectItem(at: indexPath, animated: true)
