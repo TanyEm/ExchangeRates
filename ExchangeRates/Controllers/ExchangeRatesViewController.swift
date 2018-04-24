@@ -53,7 +53,6 @@ class ExchangeRatesViewController: UIViewController {
         self.setupGridWiew()
 
         // Do any additional setup after loading the view.
-
         ApiClient.obtainCurrencies(closure: { (currenciesArray) -> Void in
             self.currenciesArray = currenciesArray
             DispatchQueue.main.async { [weak self] in

@@ -16,6 +16,8 @@ class ApiClient{
 
     static func obtainCurrencies(closure: @escaping ([CurrencyData]) -> Void) {
 
+        // If the data is not yet received, we will begin to receive it,
+        // otherwise return the previously received data currenciesArray
         if currenciesArray.isEmpty{
             guard let apiURL = URL(string: requestUrl) else {
                 return

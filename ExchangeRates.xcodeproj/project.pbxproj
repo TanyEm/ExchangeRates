@@ -71,8 +71,8 @@
 		738CC8112082648600159E44 /* ExchangeRates */ = {
 			isa = PBXGroup;
 			children = (
-				73D8697A208947C1002157A8 /* Network */,
 				738CC8122082648600159E44 /* AppDelegate.swift */,
+				73D8697A208947C1002157A8 /* Network */,
 				73D8690720866149002157A8 /* Data */,
 				73D8690C208795E7002157A8 /* Controllers */,
 				73D8690D208795FE002157A8 /* Cells */,

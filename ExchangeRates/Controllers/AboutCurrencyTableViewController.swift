@@ -39,22 +39,25 @@ class AboutCurrencyTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Received the data
         ApiClient.obtainCurrencies(closure: { (currenciesArray) -> Void in
             self.currenciesArray = currenciesArray
             DispatchQueue.main.async { [weak self] in
-
-                self?.valueLabel.text = String(format: "%.3f",(self?.currenciesArray[(self?.currencyIndex)!].Value)!)
-                self?.idLabel.text = self?.currenciesArray[(self?.currencyIndex)!].ID
-                self?.nameLabel.text = self?.currenciesArray[(self?.currencyIndex)!].Name
-                self?.nominalLabel.text = String(format: "%d",(self?.currenciesArray[(self?.currencyIndex)!].Nominal)!)
-                self?.numCodeLabel.text = self?.currenciesArray[(self?.currencyIndex)!].NumCode
-                self?.previousLabel.text = String(format: "%.3f",(self?.currenciesArray[(self?.currencyIndex)!].Previous)!)
-
-
+                self?.setData()
                 self?.tableView.reloadData()
             }
         })
     }
 
-    
+    func setData(){
+        // Adding data in view
+        let array = self.currenciesArray[(self.currencyIndex)] 
+
+        self.valueLabel.text = String(format: "%.3f", array.Value!)
+        self.idLabel.text = array.ID
+        self.nameLabel.text = array.Name
+        self.nominalLabel.text = String(format: "%d", array.Nominal!)
+        self.numCodeLabel.text = array.NumCode
+        self.previousLabel.text = String(format: "%.3f", array.Previous!)
+    }
 }
